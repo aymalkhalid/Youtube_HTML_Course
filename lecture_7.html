@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 7: Semantic HTML5 Elements</title>
+</head>
+<body>
+    <!-- Lecture 7: Semantic HTML5 Elements -->
+
+    <!--
+    =============================
+    |  1. WHAT IS SEMANTIC HTML? |
+    =============================
+    Semantic HTML means using special tags that tell us what each part of the page is for.
+    Instead of using <div> for everything, we use tags like <header>, <nav>, <main>, etc.
+    
+    Why is this good?
+    - Makes your code easier to read (for you and others!)
+    - Helps computers, search engines, and screen readers understand your page
+    - Makes your website more accessible for everyone
+    
+    Think of it like labeling your school notebooks:
+    - Just "Notebook 1", "Notebook 2" is confusing
+    - "Math Notebook", "Science Notebook" is much clearer!
+    -->
+
+    <!--
+    =============================
+    |  2. MAIN SEMANTIC ELEMENTS |
+    =============================
+    Here are the most common semantic tags:
+    - <header>: Top of the page (title, logo, intro)
+    - <nav>: Menu or links to other pages/sections
+    - <main>: The main content (what's special on this page)
+    - <section>: A group of related content (like a chapter)
+    - <article>: A complete piece of content (like a blog post)
+    - <aside>: Extra info (like a sidebar or related links)
+    - <footer>: Bottom of the page (copyright, contact info)
+    
+    Example below shows how these fit together:
+    -->
+    <!-- 
+    Example of Semantic HTML5 Elements 
+        <header>Header Content</header>
+        <nav>Navigation Links</nav>
+        <main>
+        <section>...</section>
+        <article>...</article>
+        <aside>...</aside>
+        </main> 
+        <footer>Footer Content</footer>
+
+        There are many more semantic elements, but these are the most common ones you'll use.
+        There can be multiple <section> or <article> tags on a page, but only one <main> tag.
+        <header> and <footer> can also be used inside <section> or <article> to give more context.
+        Regardless of the tag, they all help organize your content better.
+        -->
+
+
+<!-- Example of Portfolio -->
+        
+    <!--
+    =============================
+    |  3. WHEN TO USE EACH TAG? |
+    =============================
+    - <header>: Top of the page or section (title, logo)
+    - <nav>: Menus or links
+    - <main>: The main stuff on your page (only one per page!)
+    - <section>: A group of related things (like a topic or chapter)
+    - <article>: A single, complete thing (like a blog post)
+    - <aside>: Extra info (sidebars, related links)
+    - <footer>: Bottom of the page (copyright, contact)
+    -->
+<header>
+    <h1>Welcome to My Semantic HTML5 Page</h1>
+    <p>This page shows how to use semantic HTML5 elements.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#main-content">Main Content</a></li>
+        <li><a href="#section-example">Section Example</a></li>
+        <li><a href="#article-example">Article Example</a></li>
+        <li><a href="#aside-example">Aside Example</a></li>
+    </ul>
+</nav>
+<main id="main-content">
+    <section id="section-example">
+        <h2>Section Example</h2>
+        <p>This is a section that groups related content together.</p>
+    </section>
+
+    <article id="article-example">
+        <h2>Article Example</h2>
+        <p>This is an article, a complete piece of content.</p>
+    </article>
+
+    <aside id="aside-example">
+        <h3>Aside Example</h3>
+        <p>This is extra information, like a sidebar.</p>
+    </aside>
+</main>
+<footer>
+    <p>&copy; 2025 My Semantic HTML5 Page. All rights reserved.</p>
+    <p> Contact: <a href="mailto:send2ay@gmail.com"> send2ay </a>
+    </p>
+    </footer>
+    <!--
+    =============================
+    |  4. NESTING EXAMPLES       |
+    =============================
+    You can put these tags inside each other!
+    For example, an <article> can have its own <header> and <footer>.
+    -->
+
+    <!--
+    =============================
+    |  5. QUICK SUMMARY TABLE    |
+    =============================
+    | Tag      | What it's for           |
+    |----------|------------------------|
+    | header   | Top of page/section     |
+    | nav      | Menus/links             |
+    | main     | Main content            |
+    | section  | Group of related stuff  |
+    | article  | Standalone content      |
+    | aside    | Extra info/sidebars     |
+    | footer   | Bottom of page/section  |
+    -->
+
+</body>
+</html>
