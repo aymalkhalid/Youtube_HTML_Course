@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture: HTML Tables</title>
+</head>
+<body>
+    <!--
+    =============================
+    | 1. WHAT IS AN HTML TABLE? |
+    =============================
+    An HTML table is used to display data in rows and columns.
+    Tables are useful for showing structured information like schedules, price lists, or comparison charts.
+    -->
+
+    <h1>HTML Tables</h1>
+
+    <!--
+    =============================
+    | 2. BASIC TABLE STRUCTURE  |
+    =============================
+    The <table> tag wraps all the table content.
+    <tr> is a table row.
+    <th> is a table header cell (bold, for headings).
+    <td> is a table data cell (for actual data).
+    -->
+    <table>
+        <!-- First Row is the header -->
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Grade</th>
+        </tr>
+        <!-- Second Row is the first data row -->
+        <tr>
+            <td>Aymal</td>
+            <td>Math</td>
+            <td>A</td>
+        </tr>
+        <!-- Third Row is the second data row -->
+        <tr>
+            <td>Sara</td>
+            <td>Science</td>
+            <td>B+</td>
+        </tr>
+        <!-- Fourth Row is the third data row -->
+        <tr>
+            <td>Ali</td>
+            <td>English</td>
+            <td>A-</td>
+        </tr>
+    </table>
+
+    <!--
+    =============================
+    | 3. TABLE ELEMENTS         |
+    =============================
+    <table>   : Starts and ends the table.
+    <tr>      : Table row (each row of the table).
+    <th>      : Table header cell (for headings, bold by default).
+    <td>      : Table data cell (for actual data).
+    -->
+
+    <!--
+    =============================
+    | 4. ADVANCED STRUCTURE     |
+    =============================
+    <thead>  : Groups the header rows.
+    <tbody>  : Groups the main data rows.
+    <tfoot>  : Groups the footer rows (like totals).
+    <caption>: Adds a title to the table.
+    <td colspan="2">: Makes a cell span two columns.
+    -->
+    <br>
+    <h1> Advanced Table Example</h1>
+    <table>
+        <caption>Monthly Sales Report</caption>
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Product</th>
+                <th>Sales</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>January</td>
+                <td>Laptop</td>
+                <td>120</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>Tablet</td>
+                <td>80</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total</td>
+                <td>200</td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <!--
+    =============================
+    | 5. ACCESSIBILITY TIPS     |
+    =============================
+    - Always use <th> for headers, not <td>.
+    - Add a <caption> to describe the table's purpose.
+    - For complex tables, use scope="col" or scope="row" on <th>.
+    - Keep tables simple for screen readers.
+    -->
+    <h2>Accessibility Tips</h2>
+    <!-- Use scope="col" or scope="row"
+    The purpose of the scope attribute is to specify whether a header cell is a header for a column, row, or group of columns or rows.
+    - Use <th scope="col"> for column headers.
+    - Use <th scope="row"> for row headers.
+    - Use <th scope="colgroup"> for a group of columns.
+    A simple example:
+    1. if you have a table with a header for each column, you can use: scope="col" on the <th> elements.
+    2. if you have a table with a header for each row, you can use: scope="row" on the <th> elements.
+    3. if you have a table with a header for a group of columns, you can use: scope="colgroup" on the <th> elements.
+    -->
+
+
+    
+    <!--
+    =============================
+    | 6. SUMMARY                |
+    =============================
+    Tables organize data in rows and columns. Use the correct tags for structure and accessibility.
+    -->
+</body>
+</html>

@@ -1,0 +1,16 @@
+Name: Aymal
+Email: khan@gmail.com
+Password: 95687
+Favorite Color: 
+Hobbies: 
+Message: asdasd
+Country: 
+---
+Name: Aymal
+Email: khan@gmail.com
+Password: 6549
+Favorite Color: red
+Hobbies: coding, gaming, reading
+Message: pop
+Country: india
+---
