@@ -11,7 +11,11 @@
     | 1. WHAT IS AN HTML TABLE? |
     =============================
     An HTML table is used to display data in rows and columns.
-    Tables are useful for showing structured information like schedules, price lists, or comparison charts.
+    Tables are useful for showing structured information like schedules, price lists, 
+    ,comparison charts  or any data that needs to be organized in a grid format.
+    Tables are created using the <table> tag, and they consist of rows (<tr>)
+    and cells (<td> for data cells, <th> for header cells).
+    
     -->
 
     <h1>HTML Tables</h1>
@@ -21,34 +25,45 @@
     | 2. BASIC TABLE STRUCTURE  |
     =============================
     The <table> tag wraps all the table content.
+    Each tag has a specific role:
     <tr> is a table row.
     <th> is a table header cell (bold, for headings).
     <td> is a table data cell (for actual data).
+    they all have an opening and closing tag.
     -->
+    <!-- For Example: Student Results Table -->
+
     <table>
+        <caption>Student Final Results</caption>
         <!-- First Row is the header -->
         <tr>
+            <!-- All Headers -->
             <th>Name</th>
-            <th>Subject</th>
+            <th>Age</th>
             <th>Grade</th>
+            <th>Subject</th>
         </tr>
         <!-- Second Row is the first data row -->
         <tr>
-            <td>Aymal</td>
-            <td>Math</td>
+            <td>Ahmed</td>
+            <td>20</td>
             <td>A</td>
+            <td>Computer Science</td>
+            
         </tr>
         <!-- Third Row is the second data row -->
         <tr>
-            <td>Sara</td>
-            <td>Science</td>
-            <td>B+</td>
+            <td>Fatima</td>
+            <td>22</td>
+            <td>A</td>
+            <td>Web Development</td>
         </tr>
         <!-- Fourth Row is the third data row -->
         <tr>
             <td>Ali</td>
-            <td>English</td>
-            <td>A-</td>
+            <td>24</td>
+            <td>B</td>
+            <td>Database Systems</td>
         </tr>
     </table>
 
@@ -61,7 +76,8 @@
     <th>      : Table header cell (for headings, bold by default).
     <td>      : Table data cell (for actual data).
     -->
-
+    <hr>
+    <h2>Table Advance Elements</h2>
     <!--
     =============================
     | 4. ADVANCED STRUCTURE     |
@@ -71,66 +87,109 @@
     <tfoot>  : Groups the footer rows (like totals).
     <caption>: Adds a title to the table.
     <td colspan="2">: Makes a cell span two columns.
+
+    For example for tracking monthly expenses, you can use a table like this:
     -->
-    <br>
-    <h1> Advanced Table Example</h1>
-    <table>
-        <caption>Monthly Sales Report</caption>
+        <table>
+        <caption>Monthly Expenses</caption>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rent</td>
+                <td>$1200</td>
+            </tr>
+            <tr>
+                <td>Utilities</td>
+                <td>$300</td>
+            </tr>
+            <tr>
+                <td>Groceries</td>
+                <td>$400</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>$1900</td>
+            </tr>
+        </tfoot>
+        </table>
+
+    <!--
+    Adding a Table Caption with <caption>
+    A caption provides a title for your table and is important for accessibility.
+    -->
+    <hr>
+    <h3>Table Attributes and Spanning Columns/Rows Example</h3>
+
+    <!--
+    Spanning Columns with `colspan` and Rows with `rowspan`
+
+    - `colspan`: Allows a single table cell to span the width of more than one column.
+    - `rowspan`: Allows a single table cell to span the height of more than one row.
+
+    This is useful for creating complex table layouts where headers or data cells need to cover multiple rows or columns.
+    -->
+    <table border="1" width="100%" height="200px">
+        <!-- Table with Spanning Columns and Rows -->
+        <caption>Sales Report</caption>
         <thead>
             <tr>
                 <th>Month</th>
-                <th>Product</th>
                 <th>Sales</th>
+                <th colspan="2">Expenses</th>
+            </tr>
+            <tr>
+                <th>Month</th>
+                <th>Sales</th>
+                <th>Marketing</th>
+                <th>Operations</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>January</td>
-                <td>Laptop</td>
-                <td>120</td>
+                <td>$5000</td>
+                <td>$2000</td>
+                <td>$1500</td>
             </tr>
             <tr>
                 <td>February</td>
-                <td>Tablet</td>
-                <td>80</td>
-            </tr>
-        </tbody>
-        <tfoot>
+                <td>$6000</td>
+                <td>$2500</td>
+                <td>$1800</td>
+        
             <tr>
-                <td colspan="2">Total</td>
-                <td>200</td>
+                <td rowspan="4">March 15th </td>
+                <td>$7000</td>
+                <td>$3000</td>
+                <td>$2000</td>
             </tr>
-        </tfoot>
-    </table>
-    <br>
-    <!--
-    =============================
-    | 5. ACCESSIBILITY TIPS     |
-    =============================
-    - Always use <th> for headers, not <td>.
-    - Add a <caption> to describe the table's purpose.
-    - For complex tables, use scope="col" or scope="row" on <th>.
-    - Keep tables simple for screen readers.
-    -->
-    <h2>Accessibility Tips</h2>
-    <!-- Use scope="col" or scope="row"
-    The purpose of the scope attribute is to specify whether a header cell is a header for a column, row, or group of columns or rows.
-    - Use <th scope="col"> for column headers.
-    - Use <th scope="row"> for row headers.
-    - Use <th scope="colgroup"> for a group of columns.
-    A simple example:
-    1. if you have a table with a header for each column, you can use: scope="col" on the <th> elements.
-    2. if you have a table with a header for each row, you can use: scope="row" on the <th> elements.
-    3. if you have a table with a header for a group of columns, you can use: scope="colgroup" on the <th> elements.
-    -->
+            <tr>
+                <td>$8000</td>
+                <td>$3500</td>
+                <td>$2200</td>
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>$30000</td>
+                    <td>$12000</td>
+                    <td>$9500</td>
+                </tr>
+            </tfoot>
+        </table>
 
-
-    
     <!--
-    =============================
-    | 6. SUMMARY                |
-    =============================
-    Tables organize data in rows and columns. Use the correct tags for structure and accessibility.
-    -->
-</body>
-</html>
+    Other Basic Table Attributes
+
+    While most styling is now done with CSS, some basic attributes are good to know:
+    - `border`: Specifies the width of the border around the table and its cells. (e.g., `border="1"`)
+    - `width`: Sets the width of the table. (e.g., `width="100%"`)
+    - `height`: Sets the height of the table. (e.g., `height="200px"`)
