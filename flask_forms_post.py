@@ -4,27 +4,96 @@ app = Flask(__name__)
 
 # HTML form from lecture_8.html as a template string
 form_html = '''
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Forms - Input Types</title>
+</head>
+<body>
+    <h1>Advanced HTML Form Input Types</h1>
+
+    <form action="#" method="POST">
+
+        <!--
+        =====================================
+        | 1. DATE AND TIME INPUTS           |
+        =====================================
+        HTML5 introduced specific input types for handling dates and times,
+        which provide user-friendly date pickers in modern browsers. This
+        improves user experience and reduces errors.
+
+        - type="date": Lets the user select a date (year, month, day).
+        - type="time": Lets the user select a time (hour, minute).
+        - type="datetime-local": Lets the user select both a date and time.
+        - type="month": Lets the user select a month and year.
+        - type="week": Lets the user select a week and year.
+        -->
+
+        <!-- Detailed Comment for 'date' -->
+        <!--
+            The `date` input type provides a calendar-style date picker.
+            - `id`: A unique identifier to link with a <label>.
+            - `name`: The name sent to the server with the selected date.
+            - `value`: You can pre-set a date in YYYY-MM-DD format.
+            - `min` / `max`: Restricts the selectable date range.
+        -->
+        <label for="appointment-date">Appointment Date:</label>
+        <!-- YYYY-MM-DD -->
+        <input type="date" id="appointment-date" name="appointment-date" min="2025-07-05" max="2025-12-31" value="2025-07-05">
+
+        <!-- Detailed Comment for 'time' -->
+        <!--
+            The `time` input type provides a time picker for selecting hours and minutes.
+            Attributes:
+            - `id`: Unique identifier for the input, used to link with a <label>.
+            - `name`: The key sent to the server with the selected time value.
+            - `value`: Sets a default time (format: HH:MM, e.g., value="10:30").
+            - `min` / `max`: Restricts the selectable time range (e.g., min="09:00" and max="17:00").
+            - `step`: Sets the interval (in seconds) between allowed times (e.g., step="900" for 15-minute steps).
+                        The `step` attribute in an HTML `<input type="time">` or `<input type="datetime-local">` sets how much the time increases or decreases when you use the up/down arrows. The value is in seconds.
+                        For example:
+                        - `step="900"` means the time will change in 15-minute steps (900 seconds = 15 minutes).
+                        - If you set `step="60"`, the time changes in 1-minute steps.This helps control what time values users can select.
+
+            - `required`: Makes the field mandatory before form submission.
+            Example:
+
+        -->
+        <br><br>
+        <label for="meeting-time">Meeting Time:</label>
+        <input type="time" id="meeting-time" name="meeting-time" value="11:30" min="09:00" max="17:00" step="900" > 
+        <!-- Detailed Comment for 'datetime-local' -->
+        <!--
+            The `datetime-local` input type combines both date and time pickers.
+            - It does not include time zone information.
+        -->
+        <br><br>
+        <label for="event-datetime">Event Date and Time:</label>
+        <input type="datetime-local" id="event-datetime" name="event-datetime" value="2025-07-05T10:30" min="2025-07-05T09:00" max="2025-12-31T17:00" required>
+
+    <!-- Submit -->
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
+
 '''
 
 @app.route('/', methods=['GET', 'POST'])
 def form():
     if request.method == 'POST':
-        name = request.form.get('name', '')
-        email = request.form.get('email', '')
-        password = request.form.get('password', '')
-        favorite_color = request.form.get('color', '')
-        hobbies = request.form.getlist('interests')
-        message = request.form.get('message', '')
-        country = request.form.get('Country', '')
+        appointment_date = request.form.get('appointment-date', '')
+        appointment_time = request.form.get('meeting-time', '')
+        event_datetime = request.form.get('event-datetime', '')
         # Write only the user's data to a simple text file (not the whole form)
         with open('example.txt', 'a', encoding='utf-8') as f:
-            f.write(f"Name: {name}\n")
-            f.write(f"Email: {email}\n")
-            f.write(f"Password: {password}\n")
-            f.write(f"Favorite Color: {favorite_color}\n")
-            f.write(f"Hobbies: {', '.join(hobbies)}\n")
-            f.write(f"Message: {message}\n")
-            f.write(f"Country: {country}\n")
+            f.write(f"Appointment Date: {appointment_date}\n")
+            f.write(f"Meeting Time: {appointment_time}\n")
+            f.write(f"Event Date and Time: {event_datetime}\n")
             f.write("---\n")
         return render_template_string(form_html, success=True)
     return render_template_string(form_html, success=False)

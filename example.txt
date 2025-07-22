@@ -14,3 +14,7 @@ Hobbies: coding, gaming, reading
 Message: pop
 Country: india
 ---
+Appointment Date: 2025-07-12
+Meeting Time: 09:30
+Event Date and Time: 2025-07-05T10:30
+---
