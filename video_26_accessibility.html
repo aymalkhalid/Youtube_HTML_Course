@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Accessibility Best Practices</title>
+</head>
+<body>
+    <h1>HTML Accessibility Best Practices</h1>
+    <!--
+    =====================================
+    | WHY ACCESSIBILITY MATTERS          |
+    =====================================
+    Accessibility means making your website usable for everyone, including people with disabilities.
+    Good accessibility helps with SEO and is often required by law.
+    Making your site accessible improves user experience for all visitors, increases your audience, and helps search engines understand your content better.
+    -->
+
+    <!-- 1. Use Semantic HTML -->
+    <h2>1. Use Semantic HTML</h2>
+    <!--
+    WHEN: Use semantic HTML tags whenever you build your page structure.
+    WHERE: For headings, navigation, main content, footers, sections, and articles.
+    HOW: Use <h1> to <h6> for headings in order (never skip levels), and use <nav>, <main>, <footer>, <header>, <section>, <article> for layout.
+    BENEFIT: Helps screen readers and search engines understand your page structure, improving accessibility and SEO.
+    -->
+    <ul>
+        <li>Use headings (&lt;h1&gt; to &lt;h6&gt;) in order. Don’t skip levels.</li>
+        <li>Use &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, &lt;header&gt;, &lt;section&gt;, &lt;article&gt; for structure.</li>
+    </ul>
+
+    <!-- 2. Add Alt Text to Images -->
+    <h2>2. Add Alt Text to Images</h2>
+    <!--
+    WHEN: Every time you add an image.
+    WHERE: In the <img> tag, use the alt attribute.
+    HOW: Describe the image’s content and purpose. If the image is just decoration, use alt="".
+    BENEFIT: Screen readers read alt text for visually impaired users. Search engines use alt text to understand images, improving SEO.
+    -->
+    <pre>&lt;img src="cat.jpg" alt="A brown cat sitting on a sofa"&gt;</pre>
+    <ul>
+        <li>Describe the image’s content and function.</li>
+        <li>If the image is decorative, use <code>alt=""</code>.</li>
+    </ul>
+
+    <!-- 3. Label Form Elements -->
+    <h2>3. Label Form Elements</h2>
+    <!--
+    WHEN: Whenever you create a form input, checkbox, or radio button.
+    WHERE: Use <label> for each input, and link it with the input’s id.
+    HOW: Place a <label> before or after the input, and use aria-label/aria-labelledby for custom controls.
+    BENEFIT: Screen readers announce labels, making forms usable for everyone. Labeled inputs are easier for search engines to understand.
+    -->
+    <pre>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email" required&gt;</pre>
+    <ul>
+        <li>Always use &lt;label&gt; for inputs, checkboxes, and radios.</li>
+        <li>Use <code>aria-label</code> or <code>aria-labelledby</code> for custom controls.</li>
+    </ul>
+
+    <!-- 4. Use Sufficient Color Contrast -->
+    <h2>4. Use Sufficient Color Contrast</h2>
+    <!--
+    WHEN: Whenever you choose colors for text and backgrounds.
+    WHERE: All text, buttons, and important elements.
+    HOW: Make sure text is easy to read against its background. Use online tools to check contrast ratios.
+    BENEFIT: Helps people with low vision or color blindness. Good contrast also makes your site look professional and readable for everyone.
+    -->
+    <ul>
+        <li>Text should be easy to read against its background.</li>
+        <li>Don’t use color alone to convey meaning.</li>
+    </ul>
+
+    <!-- 5. Keyboard Navigation -->
+    <h2>5. Keyboard Navigation</h2>
+    <!--
+    WHEN: Always! Every interactive element should be usable with a keyboard.
+    WHERE: Links, buttons, forms, menus, and any clickable item.
+    HOW: Make sure users can use Tab/Shift+Tab to move between elements. Use tabindex to control order if needed.
+    BENEFIT: Essential for users who can’t use a mouse. Also helps search engines crawl your site more easily.
+    -->
+    <ul>
+        <li>All interactive elements (links, buttons, forms) should be accessible with Tab/Shift+Tab.</li>
+        <li>Use <code>tabindex</code> to control tab order if needed.</li>
+    </ul>
+
+    <!-- 6. ARIA Attributes (Intro) -->
+    <h2>6. ARIA Attributes (Intro)</h2>
+    <!--
+    WHEN: When you build custom widgets or controls that aren’t natively accessible.
+    WHERE: On custom buttons, menus, dialogs, sliders, etc.
+    HOW: Use role, aria-label, aria-labelledby, and aria-describedby to describe the widget’s purpose and state.
+    BENEFIT: Makes custom controls understandable for screen readers. Only use ARIA when native HTML can’t do the job, as native elements are best for SEO and accessibility.
+    -->
+    <ul>
+        <li>Use <code>role</code>, <code>aria-label</code>, <code>aria-labelledby</code>, and <code>aria-describedby</code> for custom widgets.</li>
+        <li>Only use ARIA when native HTML can’t do the job.</li>
+    </ul>
+
+    <!-- Practical ARIA Example: Custom Button -->
+    <h3>ARIA Example: Custom Button</h3>
+    <!--
+    This is a <div> styled as a button. Native <button> is best, but if you must use a <div>, add ARIA attributes:
+    - role="button": Tells screen readers this is a button.
+    - aria-label="Submit Form": Gives a clear label for screen readers.
+    - tabindex="0": Makes it focusable by keyboard.
+    -->
+    <div role="button" aria-label="Submit Form" tabindex="0" style="display:inline-block; padding:10px 20px; background:#0078d4; color:#fff; border-radius:4px; cursor:pointer;">
+        Submit
+    </div>
+    <!--
+    If you want to reference another element for a label or description:
+    <div role="button" aria-labelledby="btnLabel" aria-describedby="btnDesc" tabindex="0">
+        <span id="btnLabel">Send</span>
+        <span id="btnDesc">Click to send your message</span>
+    </div>
+    -->
+
+    <!-- 7. Test with Screen Readers -->
+    <h2>7. Test with Screen Readers</h2>
+    <!--
+    WHEN: Before launching your site and after making changes.
+    WHERE: Test all pages and important features.
+    HOW: Use free screen readers like NVDA (Windows) or VoiceOver (Mac) to check how your site sounds and works.
+    BENEFIT: Ensures your site is truly usable for people with disabilities. Fixing issues helps everyone and can improve your site’s reputation and SEO.
+    -->
+    <ul>
+        <li>Try your site with a screen reader (NVDA, VoiceOver, etc.).</li>
+        <li>Fix anything that’s confusing or missing.</li>
+    </ul>
+</body>
+</html>

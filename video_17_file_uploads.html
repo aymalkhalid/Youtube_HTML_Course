@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Forms - File Upload Input</title>
+</head>
+<body>
+    <h1>Advanced HTML Form Input: File Upload</h1>
+    <form action="#" method="POST">
+        <!--
+        =====================================
+        | FILE UPLOAD INPUT                 |
+        =====================================
+        The file input type allows users to select one or more files from their device to upload.
+        This is commonly used for profile pictures, document uploads, etc.
+
+        Attributes:
+        - type="file": Specifies the input is for file selection.
+        - id: Unique identifier for the input, used to link with a <label>.
+        - name: The key sent to the server with the file data.
+        - accept: Restricts the types of files users can select (e.g., images only: accept="image/*").
+        - multiple: Allows users to select more than one file.
+        - required: Makes file selection mandatory before form submission.
+
+        Accessibility:
+        - Always use a <label> for the file input so users know what to upload.
+        -->
+        <label for="file-upload-resume">Upload your Resume file:</label>
+        <input type="file" id="file-upload-resume" name="file-upload-resume" accept=".pdf,.doc,.docx" multiple required>
+        <br><br>
+        <!--
+            Example for multiple images:
+            The accept="image/*" attribute restricts the selectable files to images only, such as JPEG, PNG, or GIF formats.
+             This helps guide users to choose appropriate files and can prevent accidental selection of non-image files. 
+             The multiple attribute allows users to select more than one file at a time,
+              enabling batch uploads of images rather than requiring them to select and upload each image individually.
+            <input type="file" id="photos" name="photos" accept="image/*" multiple>
+
+        -->
+    <label for="file-upload-images">Upload your Images:</label>
+    <input type="file" id="file-upload-images" name="file-upload-images" accept="image/*" multiple>
+    <br><br>
+    <input type="submit" value="Upload">
+    <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

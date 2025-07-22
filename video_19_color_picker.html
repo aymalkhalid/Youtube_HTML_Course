@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Forms - Range and Color Inputs</title>
+</head>
+<body>
+    <h1>Advanced HTML Form Inputs: Range and Color</h1>
+    <form action="#" method="POST">
+    
+        <!--
+            =====================================
+            | COLOR INPUT                       |
+            =====================================
+            Pre Introduction:
+            In simple terms, it's an input type that allows users to select a color.
+            Description:
+            The color input type lets users pick a color using a color picker dialog.
+            Perfect for letting users customize their experience with colors.
+
+            Real-life examples where you see color pickers:
+            - Choosing your favorite color for your social media profile
+            - Picking a background color for your blog or website
+            - Selecting text colors in word processors or design apps
+            - Customizing the theme color of mobile apps
+
+            Attributes:
+            - type="color": Specifies the input is a color picker.
+            - id: Unique identifier for the input, used to link with a <label>.
+            - name: The key sent to the server with the selected color value.
+            - value: The default color (in hex, e.g., #ff0000 for red).
+        -->
+        <label for="profile-color">Choose your profile theme color:</label>
+        <input type="color" id="profile-color" name="profile-color" value="#ff0000">
+    </form>
+</body>
+</html>

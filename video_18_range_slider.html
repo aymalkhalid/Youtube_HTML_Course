@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Forms - Range and Color Inputs</title>
+</head>
+<body>
+    <h1>Advanced HTML Form Inputs: Range and Color</h1>
+    <form action="#" method="POST">
+        <!--
+        =====================================
+        | RANGE INPUT                       |
+        =====================================
+        The range input type creates a slider for selecting a value within a range.
+        Perfect for settings where users need to choose from a continuous range of values.
+
+        Real-life examples:
+        - Product ratings (1-5 stars)
+        - Price range filters on shopping sites
+        - Volume controls on music players
+        - Brightness settings on devices
+
+        Attributes:
+        - type="range": Specifies the input is a slider.
+        - id: Unique identifier for the input, used to link with a <label>.
+        - name: The key sent to the server with the selected value.
+        - min: The minimum value allowed.
+        - max: The maximum value allowed.
+        - step: The interval between allowed values.
+        - value: The default value shown on the slider.
+        -->
+        <label for="rating">Rate this product (1-5 stars):</label>
+        <input type="range" id="product-rating" name="product-rating" min="1" max="5" step="2" value="5">
+
+    </form>
+</body>
+</html>

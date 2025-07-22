@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedding Media in HTML</title>
+</head>
+<body>
+    <h1>Embedding Media: Audio, Video, and Iframes</h1>
+    <!--
+    =====================================
+    | AUDIO ELEMENT                      |
+    =====================================
+    The <audio> tag is used to embed sound content in documents.
+    Attributes:
+    - controls: Shows play, pause, and volume controls.
+    - src: The path to the audio file.
+    - type: The MIME type of the audio file (e.g., audio/mpeg).
+    - autoplay, loop, muted: Optional attributes for playback behavior.
+    -->
+    <audio controls>
+        <source src="azan1.mp3" type="audio/mpeg">
+    </audio>
+    <br><br>
+    <!--
+    =====================================
+    | VIDEO ELEMENT                      |
+    =====================================
+    The <video> tag is used to embed video content.
+    Attributes:
+    - controls: Shows play, pause, and volume controls.
+    - width, height: Set the size of the video player.
+    - src: The path to the video file.
+    - type: The MIME type of the video file (e.g., video/mp4).
+    - autoplay, loop, muted, poster: Optional attributes for playback and preview image.
+    -->
+    <video controls width="640" height="360" poster="">
+        <source src="GHL Details.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br><br>
+   <!--
+    =====================================
+    | IFRAME ELEMENT                     |
+    =====================================
+    The <iframe> tag is used to embed another webpage or external content (like YouTube videos or Google Maps).
+    Attributes:
+    - src: The URL of the page to embed.
+    - width, height: Set the size of the frame.
+    - allowfullscreen: Allows full-screen mode for videos.
+    - frameborder: (deprecated) Sets the border thickness.
+    -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1653.6992639604357!2d71.56914710672038!3d34.00797991670984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d917d8ee6b07e5%3A0xdf07748ce57e249c!2sQissa%20Khwani%20Bazaar%20Peshawar%2C%20Pakistan!5e0!3m2!1sen!2s!4v1752832982094!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>

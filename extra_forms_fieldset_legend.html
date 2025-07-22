@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Forms - Fieldset and Legend</title>
+</head>
+<body>
+    <h1>Bank Account Registration Form</h1>
+    <form action="#" method="POST">
+        <!--
+        =====================================
+        | FIELDSET AND LEGEND               |
+        =====================================
+        The <fieldset> element is used to group related form controls together.
+        This helps organize complex forms and improves accessibility for screen readers.
+        The <legend> element provides a caption for the group.
+
+        Real-life example: Bank registration forms
+        Banks use fieldsets to separate different sections like:
+        - Personal information (name, address, phone)
+        - Account preferences (account type, initial deposit)
+        - Security settings (PIN, security questions)
+
+        Structure and Elements Explained:
+        
+        1. <fieldset> - The container element
+           - Creates a visual border around grouped form elements
+           - Groups related form controls logically
+           - Helps screen readers understand form sections
+           - Must contain a <legend> as the first child element
+           
+        2. <legend> - The title/caption for the fieldset
+           - MUST be the first element inside <fieldset>
+           - Describes what the group of form elements is for
+           - Screen readers announce this to users
+           - Appears at the top of the fieldset border
+           
+        3. Form elements inside fieldset:
+           - <label> - Describes what each input is for
+           - <input> - Various types (text, email, tel, number, password)
+           - <textarea> - Multi-line text input
+           - <select> and <option> - Dropdown menus
+           - <checkbox> - For agreements/confirmations
+           
+        Benefits:
+        - Visually separates sections of a form (draws a box around grouped controls)
+        - The <legend> describes the purpose of the group
+        - Screen readers announce the legend, helping users understand the form structure
+        - Makes long forms easier to understand and complete
+        - Improves form accessibility and user experience
+        
+        Syntax:
+        <fieldset>
+            <legend>Section Title</legend>
+            form elements go here
+            - <input> - Various types (text, email, tel, number, password)
+           - <textarea> - Multi-line text input
+           - <select> and <option> - Dropdown menus
+           - <checkbox> - For agreements/confirmations
+        </fieldset>
+        <fieldset>
+            The <legend> MUST be the first element inside <fieldset>
+          -->
+        <fieldset>
+        <legend>Personal Information</legend>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g., 0300-1234567" pattern="03[0-9]{2}-[0-9]{7}" required>
+            <br><br>
+            <label for="address">Home Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+            <br><br>
+        </fieldset>
+
+        <fieldset>
+        <legend>Account Preferences</legend>
+        <label for="account_type">Account Type:</label>
+            <select id="account_type" name="account_type" required>
+                <option value="current">Current Account</option>
+                <option value="fixed">Fixed Deposit Account</option>
+                <option value="savings">Savings Account</option>
+            </select>
+            <br><br>
+            <label for="initial_deposit">Initial Deposit Amount:</label>
+            <input type="number" id="initial_deposit" name="initial_deposit" min="1000" step="100" placeholder="Minimum 1000" required>
+            <br><br>
+        </fieldset>
+
+        <fieldset>
+        <legend>Security Settings</legend>
+        <label for="pin">PIN:</label>
+        <input type="password" id="pin" name="pin" minlength="4" maxlength="4" pattern="[0-9]{4}" required>
+        <br><br>
+        <label for="security_question">Security Question:</label>
+        <select id="security_question" name="security_question" required>
+            <option value="mother_maiden">What is your mother's maiden name?</option>
+            <option value="first_pet">What was the name of your first pet?</option>
+            <option value="birth_city">In which city were you born?</option>
+        </select>
+        <br><br>
+        <label for="security_answer">Answer:</label>
+        <input type="text" id="security_answer" name="security_answer" required>
+        <br><br>
+        </fieldset>
+
+        <!-- Submit and reset buttons outside fieldsets --> 
+        <input type="submit" value="Open Account">
+        <input type="reset" value="Clear Form">
+    </form>
+</body>
+</html>

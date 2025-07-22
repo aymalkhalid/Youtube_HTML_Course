@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 8: HTML Text Formatting - Bold, Italic, Underline & More!</title>
+</head>
+<body>
+    <h1>HTML Text Formatting Tutorial</h1>
+    
+    <!--
+    =====================================
+    | SEMANTIC vs VISUAL FORMATTING    |
+    =====================================
+    Understanding the difference between SEMANTIC and VISUAL tags is crucial!
+    
+    SEMANTIC TAGS (Recommended - Better for SEO and Accessibility):
+    - <strong> = Important/strongly emphasized text (usually displays as bold)
+    - <em> = Emphasized text (usually displays as italic) 
+    - <mark> = Highlighted/marked text (usually yellow background)
+    - <small> = Smaller, less important text
+    - <del> = Deleted text (strikethrough)
+    - <ins> = Inserted text (usually underlined)
+    
+    VISUAL TAGS (Old approach - only for appearance):
+    - <b> = Bold text (no semantic meaning)
+    - <i> = Italic text (no semantic meaning)
+    - <u> = Underlined text (no semantic meaning)
+    
+    Why SEMANTIC tags are better:
+    1. Screen readers understand the meaning
+    2. Search engines give proper importance
+    3. Better for accessibility
+    4. More professional coding practice
+    -->
+    
+    <h2>1. SEMANTIC FORMATTING (Recommended)</h2>
+    
+    <h3>Strong Importance (Bold appearance)</h3>
+    <p>This is <strong>very important information</strong> that users must read!</p>
+    <p>Safety warning: <strong>Always wear protective gear!</strong></p>
+    
+    <h3>Emphasis (Italic appearance)</h3>
+    <p>I <em>really</em> love learning HTML and web development!</p>
+    <p>The word <em>semantic</em> means "meaningful" in web development.</p>
+    
+    <h3>Highlighted Text</h3>
+    <p>The exam will cover <mark>Chapter 5 and Chapter 7</mark> only.</p>
+    <p>Search result: Found <mark>HTML tutorial</mark> in 0.05 seconds.</p>
+    
+    <h3>Small Text</h3>
+    <p>Copyright © 2025 Tech & Code with Aymal. <small>All rights reserved.</small></p>
+    <p>Price: $199 <small>(excluding taxes)</small></p>
+    
+    <h3>Deleted and Inserted Text</h3>
+    <p>Original price: <del>$299</del> <ins>$199</ins> (Sale price!)</p>
+    <p>My name is <del>John</del> <ins>Aymal</ins> and I teach web development.</p>
+    
+    <hr>
+    
+    <h2>2. VISUAL FORMATTING (Less Recommended)</h2>
+    <p><b>Bold text</b> - Just for appearance, no semantic meaning</p>
+    <p><i>Italic text</i> - Just for appearance, no semantic meaning</p>
+    <p><u>Underlined text</u> - Just for appearance, no semantic meaning</p>
+    
+    <hr>
+    
+    <h2>3. COMBINING FORMATTING</h2>
+    <p>You can <strong><em>combine multiple formatting</em></strong> for emphasis!</p>
+    <p>This is <strong>important <mark>highlighted</mark> information</strong>.</p>
+    
+    <hr>
+    
+    <h2>4. REAL-LIFE EXAMPLES</h2>
+    
+    <h3>Blog Post Example:</h3>
+    <article>
+        <h4>How to Learn Web Development</h4>
+        <p>Learning web development requires <strong>dedication and practice</strong>. 
+        The most important thing is to <em>start with the basics</em> like HTML and CSS.</p>
+        
+        <p>Many students ask: <em>"How long does it take to become a web developer?"</em> 
+        The answer depends on your <strong>commitment and learning pace</strong>.</p>
+        
+        <p><small>Published on July 15, 2025 by Aymal</small></p>
+    </article>
+    
+    <h3>E-commerce Example:</h3>
+    <div>
+        <h4>HTML Complete Course</h4>
+        <p>Regular Price: <del>$99</del></p>
+        <p>Sale Price: <strong><mark>$49</mark></strong></p>
+        <p><small>*Limited time offer expires soon</small></p>
+    </div>
+    
+    <h3>News Article Example:</h3>
+    <article>
+        <h4>Breaking: New HTML Features Released</h4>
+        <p><strong>Important Update:</strong> HTML has introduced new semantic elements.</p>
+        <p>Web developers are <em>excited</em> about these new features because they make 
+        websites more <strong>accessible and SEO-friendly</strong>.</p>
+        <p><mark>Key takeaway:</mark> Always use semantic tags when possible!</p>
+    </article>
+    
+    <hr>
+    
+    <h2>5. ACCESSIBILITY BEST PRACTICES</h2>
+    <ul>
+        <li>Use <code>&lt;strong&gt;</code> instead of <code>&lt;b&gt;</code> for important text</li>
+        <li>Use <code>&lt;em&gt;</code> instead of <code>&lt;i&gt;</code> for emphasized text</li>
+        <li>Screen readers can understand semantic meaning better</li>
+        <li>Search engines give more importance to semantic tags</li>
+        <li>Your code becomes more professional and maintainable</li>
+    </ul>
+    
+    <hr>
+    
+    <h2>6. QUICK REFERENCE</h2>
+    <table border="1">
+        <tr>
+            <th>Semantic Tag</th>
+            <th>Visual Result</th>
+            <th>Meaning</th>
+            <th>When to Use</th>
+        </tr>
+        <tr>
+            <td>&lt;strong&gt;</td>
+            <td><strong>Bold</strong></td>
+            <td>Strong importance</td>
+            <td>Warnings, key points</td>
+        </tr>
+        <tr>
+            <td>&lt;em&gt;</td>
+            <td><em>Italic</em></td>
+            <td>Emphasis</td>
+            <td>Stressed words, quotes</td>
+        </tr>
+        <tr>
+            <td>&lt;mark&gt;</td>
+            <td><mark>Highlighted</mark></td>
+            <td>Marked/highlighted</td>
+            <td>Search results, key info</td>
+        </tr>
+        <tr>
+            <td>&lt;small&gt;</td>
+            <td><small>Smaller</small></td>
+            <td>Less important</td>
+            <td>Copyright, footnotes</td>
+        </tr>
+        <tr>
+            <td>&lt;del&gt;</td>
+            <td><del>Strikethrough</del></td>
+            <td>Deleted content</td>
+            <td>Old prices, corrections</td>
+        </tr>
+        <tr>
+            <td>&lt;ins&gt;</td>
+            <td><ins>Underlined</ins></td>
+            <td>Inserted content</td>
+            <td>New prices, additions</td>
+        </tr>
+    </table>
+    
+    <hr>
+    
+    <p><strong>Remember:</strong> Always choose <em>semantic meaning</em> over <em>visual appearance</em> 
+    when writing HTML. Your future self (and your users) will thank you!</p>
+    
+    <p><small>This tutorial is part of the complete HTML course by Tech & Code with Aymal.</small></p>
+    
+</body>
+</html>

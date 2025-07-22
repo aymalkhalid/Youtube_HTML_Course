@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 13: Semantic HTML - Header, Footer, Nav & More!</title>
+</head>
+<body>
+    <!--
+    =====================================
+    | SEMANTIC HTML ELEMENTS            |
+    =====================================
+    Semantic HTML means using HTML elements that have meaning and describe 
+    the content they contain. Instead of using <div> for everything, we use 
+    specific tags that tell both browsers and developers what each section does.
+    
+    Benefits of Semantic HTML:
+    1. Better SEO (Search Engine Optimization)
+    2. Improved Accessibility for screen readers
+    3. Cleaner, more organized code
+    4. Better maintenance and understanding
+    5. Professional web development standard
+    
+    Main Semantic Elements:
+    - <header>: Top section of page/article (logo, navigation, titles)
+    - <nav>: Navigation links and menus
+    - <main>: Main content area of the page
+    - <section>: Thematic grouping of content
+    - <article>: Independent, self-contained content
+    - <aside>: Side content, related info, ads
+    - <footer>: Bottom section (copyright, contact, links)
+    -->
+    
+    <!-- SEMANTIC STRUCTURE EXAMPLE -->
+    
+    <header>
+        <h1>Tech & Code with Aymal</h1>
+        <p>Complete HTML Course in Urdu/Hindi</p>
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <h2>Welcome to Our HTML Course</h2>
+            <p>Learn HTML from zero to expert level with practical examples and real-world projects.</p>
+            
+            <article>
+                <h3>What You'll Learn</h3>
+                <p>This comprehensive course covers everything from basic HTML structure to advanced form validation and semantic elements.</p>
+                <ul>
+                    <li>HTML Basic Structure</li>
+                    <li>Text Formatting and Lists</li>
+                    <li>Images, Links, and Media</li>
+                    <li>Forms and Input Types</li>
+                    <li>Tables and Semantic Elements</li>
+                </ul>
+            </article>
+            
+            <article>
+                <h3>Course Benefits</h3>
+                <p>By the end of this course, you'll be able to create professional, accessible websites using modern HTML5 standards.</p>
+                <p><strong>Duration:</strong> 25+ Videos | <strong>Language:</strong> Hindi/Urdu | <strong>Level:</strong> Beginner to Advanced</p>
+            </article>
+        </section>
+        
+        <section id="about">
+            <h2>About the Instructor</h2>
+            <article>
+                <h3>Aymal Khalid</h3>
+                <p>Professional web developer and instructor with years of experience in creating educational content for aspiring developers.</p>
+                <p>Specializes in making complex programming concepts easy to understand through practical examples and real-world applications.</p>
+            </article>
+        </section>
+        
+        <section id="courses">
+            <h2>Course Modules</h2>
+            
+            <article>
+                <h3>Module 1: HTML Fundamentals</h3>
+                <p>Learn the building blocks of web development with HTML basics, structure, and essential elements.</p>
+                <ul>
+                    <li>HTML Document Structure</li>
+                    <li>Headings and Paragraphs</li>
+                    <li>Lists and Links</li>
+                    <li>Images and Media</li>
+                </ul>
+            </article>
+            
+            <article>
+                <h3>Module 2: Advanced HTML</h3>
+                <p>Dive deeper into HTML with forms, tables, semantic elements, and accessibility best practices.</p>
+                <ul>
+                    <li>HTML Forms and Validation</li>
+                    <li>Tables and Data Organization</li>
+                    <li>Semantic HTML Elements</li>
+                    <li>Accessibility and SEO</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    
+    <aside>
+        <h2>Quick Resources</h2>
+        <section>
+            <h3>Helpful Links</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Documentation</a></li>
+                <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
+                <li><a href="https://validator.w3.org/" target="_blank">HTML Validator</a></li>
+            </ul>
+        </section>
+        
+        <section>
+            <h3>Practice Tips</h3>
+            <ul>
+                <li>Practice coding every day</li>
+                <li>Build real projects</li>
+                <li>Validate your HTML code</li>
+                <li>Focus on semantic meaning</li>
+            </ul>
+        </section>
+    </aside>
+    
+    <footer>
+        <section>
+            <h3>Contact Information</h3>
+            <p>Email: contact@techcodeaymal.com</p>
+            <p>YouTube: Tech & Code with Aymal</p>
+        </section>
+        
+        <section>
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#youtube">YouTube Channel</a></li>
+                <li><a href="#github">GitHub Repository</a></li>
+                <li><a href="#website">Official Website</a></li>
+            </ul>
+        </section>
+        
+        <p>&copy; 2025 Tech & Code with Aymal. All rights reserved.</p>
+    </footer>
+    
+    <!--
+    =====================================
+    | SEMANTIC vs NON-SEMANTIC          |
+    =====================================
+    
+    NON-SEMANTIC (Old Way - Not Recommended):
+    <div id="header">
+        <div id="logo">Website Name</div>
+        <div id="menu">Navigation Links</div>
+    </div>
+    <div id="content">
+        <div class="post">Article Content</div>
+    </div>
+    <div id="sidebar">Related Content</div>
+    <div id="footer">Copyright Info</div>
+    
+    SEMANTIC (Modern Way - Recommended):
+    <header>
+        <h1>Website Name</h1>
+        <nav>Navigation Links</nav>
+    </header>
+    <main>
+        <article>Article Content</article>
+    </main>
+    <aside>Related Content</aside>
+    <footer>Copyright Info</footer>
+    
+    Benefits of Semantic Approach:
+    1. Screen readers can navigate better
+    2. Search engines understand content structure
+    3. Code is more readable and maintainable
+    4. Better accessibility compliance
+    5. Professional development standard
+    -->
+    
+    <style>
+        /* Basic styling to show structure */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        main {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        section {
+            margin-bottom: 30px;
+        }
+        
+        article {
+            border-left: 4px solid #007cba;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        aside {
+            background: #e9e9e9;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        footer section {
+            display: inline-block;
+            margin: 0 20px;
+            vertical-align: top;
+        }
+        
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        footer a {
+            color: #ccc;
+        }
+    </style>
+    
+</body>
+</html>

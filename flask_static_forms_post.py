@@ -1,0 +1,137 @@
+from flask import Flask, request, render_template_string
+
+app = Flask(__name__)
+
+form_html = '''
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced HTML Forms - Specialized Text Inputs</title>
+    </head>
+    <body>
+        <h1>Advanced HTML Form Inputs: Specialized Text Inputs</h1>
+        {% if success %}
+        <div style="background-color: #d4edda; color: #155724; padding: 10px; border: 1px solid #c3e6cb; border-radius: 5px; margin-bottom: 20px;">
+            <strong>✓ Success!</strong> Your form has been submitted successfully!
+        </div>
+        {% endif %}
+        <form action="/submit_form" method="POST">
+                <!--
+        =====================================
+        | FORM VALIDATION ATTRIBUTES        |
+        =====================================
+        HTML5 provides built-in validation for form fields using attributes.
+        These help ensure users enter correct data before submitting the form.
+        The browser automatically checks these rules and shows error messages.
+
+        Real-life example: Job application forms
+        Companies use validation to ensure they get:
+        - Valid email addresses for contact
+        - Phone numbers in the correct format
+        - Proper age verification for legal requirements such as above 18
+        - Specific formats for usernames or passwords
+        - Strong passwords for account security
+
+        Common validation attributes explained:
+
+        1. required: Field MUST be filled out before submitting
+           - Browser won't submit the form if this field is empty
+           - Shows "Please fill out this field" message
+           
+        2. min / max: Minimum and maximum values (for numbers, dates)
+           - Example: Age must be between 18-65 for employment
+           - Browser checks the range automatically
+           
+        3. minlength / maxlength: Character count limits for text
+           - Example: Username must be 5-12 characters
+           - Prevents too short or too long entries
+           
+        4. pattern: Custom format rules using regex
+           - Example: Phone number must follow 0300-1234567 format
+           - Browser checks if input matches the pattern
+           
+        5. step: Allowed intervals for number inputs
+           - Example: Salary in steps of 1000 (25000, 26000, 27000)
+           - Controls what values are allowed
+           
+        6. placeholder: Hint text inside the input field
+           - Shows example of expected format
+           - Disappears when user starts typing
+           
+        7. title: Custom error message tooltip
+           - Shows when user hovers or validation fails
+           - Explains what format is expected
+        -->
+        
+        <!-- Age validation with min/max -->
+         <label for="age">Age (18-65):</label>
+         <input type="number" id="age" name="age" min="18" max="65" required placeholder="Age" title="Age must be between 18 and 65">
+        <br><br>
+        <!-- Text validation with minlength/maxlength and pattern -->
+        <!-- Pattern: [A-Za-z]+ Meaning: Only letters allowed? White spaces are not allowed  -->
+         <label for="username">Username (5-12 chars, letters only):</label>
+         <input type="text" id="username" name="username" minlength="5" maxlength="12" pattern="[A-Za-z]+" required placeholder="Enter username" title="Username must be 5-12 characters, letters only"> 
+         <br><br>
+        <!-- URL validation (optional field) -->
+         <label for="website">Portfolio Website (optional):</label>
+         <input type="url" id="website" name="website" placeholder="https://example.com" title="Enter a valid URL starting with http:// or https://">
+         <br><br>
+        
+        <!-- Password validation with pattern -->
+         <label for="password">Password (8-16 chars, at least 1 letter, 1 number):</label>
+         <input type="password" id="password" name="password" minlength="8" maxlength="16" pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}" required placeholder="Enter password" title="Password must be 8-16 characters, at least 1 letter and 1 number">
+         <br><br> 
+        
+        <!-- Phone validation with specific pattern -->
+         <label for="phone">Phone Number:</label>
+         <input type="tel" id="phone" name="phone" placeholder="e.g., 0300-1234567" pattern="03[0-9]{2}-[0-9]{7}" required title="Phone must be in format 0300-1234567">
+         <br><br>
+        
+        <!-- Email validation (built-in) -->
+         <label for="email">Email Address:</label>
+         <input type="email" id="email" name="email" required placeholder="Enter your email">
+         <br><br>
+
+        <!-- Salary with step validation -->
+         <label for="salary">Expected Salary (in 1000s):</label>
+         <input type="number" id="salary" name="salary" min="25000" max="50000" step="1000" required placeholder="e.g., 30000" title="Salary must be between 25000 and 50000 in increments of 1000">
+         <br><br>
+        
+        <!--
+        How validation works:
+        1. User fills out the form
+        2. When they click submit, browser checks all validation rules
+        3. If any field fails validation, browser shows error message
+        4. User must fix errors before form can be submitted
+        5. Only valid data gets sent to the server
+        
+        Error messages you might see:
+        - "Please fill out this field" (required)
+        - "Please enter a number" (type mismatch)
+        - "Value must be greater than or equal to 18" (min/max)
+        - "Please match the requested format" (pattern)
+        - "Please enter an email address" (email type)
+        -->
+        <br><br>
+        <input type="submit" value="Submit Application">
+        <input type="reset" value="Clear Form">
+        </form>
+
+    </body>
+    </html>
+   
+'''
+
+@app.route('/submit_form', methods=['GET', 'POST'])
+def form():
+    if request.method == 'POST':
+        # Form was submitted - show success message
+        print("Form submitted with data:", request.form)
+        return render_template_string(form_html, success=True)
+    # First time loading the page - no success message
+    return render_template_string(form_html, success=False)
+
+if __name__ == '__main__':
+    app.run(debug=True)

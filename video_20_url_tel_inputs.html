@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced HTML Forms - Specialized Text Inputs</title>
+</head>
+<body>
+    <h1>Advanced HTML Form Inputs: Specialized Text Inputs</h1>
+    <form action="#" method="POST">
+        <!--
+        =====================================
+        | TEL INPUT                         |
+        =====================================
+        The tel input type is for telephone numbers. On mobile, it brings up a numeric keypad.
+        Attributes:
+        - type="tel": Specifies the input is for telephone numbers.
+        - id: Unique identifier for the input, used to link with a <label>.
+        - name: The key sent to the server with the phone number.
+        - placeholder: Shows a hint about the expected format.
+        - pattern: A regex pattern to validate the phone number format.
+        - What is regex? Regex (Regular Expression) is a sequence of characters that forms a search pattern. It's used for pattern matching within strings.
+        - required: Makes the field mandatory before form submission.
+        -->
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="e.g., 0300-1234567" pattern="03[0-9]{2}-[0-9]{7}" required>
+        <!--
+            =====================================
+            | URL INPUT                         |
+            =====================================
+            The url input type is for web addresses. 
+            Browsers validate the input as a URL.
+            Attributes:
+            - type="url": Specifies the input is for URLs.
+            - id: Unique identifier for the input, used to link with a <label>.
+            - name: The key sent to the server with the URL.
+            - placeholder: Shows a hint about the expected format.
+            - required: Makes the field mandatory before form submission.
+        -->
+        <br><br>
+        <label for="portfolio_website">Website URL:</label>
+        <input type="url" id="portfolio_website" name="portfolio_website" placeholder="https://example.com" required>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

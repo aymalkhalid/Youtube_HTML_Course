@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google-like Search Page</title>
+</head>
+<body>
+    <h1>My Search Engine</h1>
+    
+    <!--
+    =====================================
+    | SEARCH INPUT                      |
+    =====================================
+    Building a Google-like search page using HTML search input.
+    
+    The search input type is perfect for creating search interfaces because:
+    - Browsers may add a clear (X) button automatically
+    - On mobile devices, it may show an optimized keyboard
+    - It's semantically correct for search functionality
+    
+    Real-life examples:
+    - Google's main search box
+    - Website search bars
+    - E-commerce product search
+    - Social media search features
+    
+    Attributes used:
+    - type="search": Specifies this input is for search queries
+    - id: Links the input to its label for accessibility
+    - name: The key sent to the server (commonly "q" for "query")
+    - placeholder: Shows hint text inside the input
+    - autocomplete: Helps browsers suggest previous searches
+    
+    Step by Step to create a search box:
+    We have a div with class "search-container" that contains:
+        1. Create a form element with action pointing to the search engine (e.g., https://www.google.com/search)
+        2. Add an input element with type="search"
+        3. Set the name attribute to "q" (or similar) for search queries
+        4. Add a placeholder to guide users on what to search for?
+    - autocomplete: Helps browsers suggest previous searches
+    - target="_blank": Opens the search results in a new tab
+
+    1. Create a form element with action pointing to the search engine (e.g., https://www.google.com/search)
+    2. Add an input element with type="search"
+    3. Set the name attribute to "q" (or similar) for search queries
+    4. Add a placeholder to guide users on what to search for?
+    5. Add a submit button to trigger the search
+    6. Optionally, add a button for "I'm Feeling Lucky" functionality
+    -->
+    <div class="search-container">
+        <form action="https://www.google.com/search" method="GET" target="_blank">
+            <input type="search" id="search-query" name="query" placeholder="Search the web..." autocomplete="on">
+            <input type="submit" value="Search">
+
+        </form>
+    </div>
+</body>
+</html>
